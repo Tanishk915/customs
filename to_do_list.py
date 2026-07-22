@@ -10,6 +10,8 @@ ctk.set_window_scaling(1.1)
 ctk.set_default_color_theme("green")
 ctk.set_appearance_mode("light")
 
+
+#  button fucntionality
 def button_on_click():
     if button.cget("text")== "click me":
         button.configure(
@@ -25,6 +27,12 @@ def button_on_click():
 button =ctk.CTkButton(app,text="click me", fg_color= "red", command= button_on_click)
 button.pack(pady=20)
 
+#  Check box functionality
+def checkbox_p():
+    print("checkbox toggles: current value:")
 
+check_vari= ctk.StringVar(value="on")
+checkbox = ctk.CTkCheckBox(app,text="checkbox", command=checkbox_p, variable=check_vari,onvalue="on", offvalue="off")
+# checkbox.grid(row=2, column=0, padx=10, pady=(10, 0), sticky="w")
 
 app.mainloop()
